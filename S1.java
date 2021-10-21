@@ -5,41 +5,23 @@
  */
 package concurrenteTeoria;
 
-import java.util.concurrent.Semaphore;
 /**
  *
  * @author Diana
  */
 public class S1 implements Runnable{
-    private int a,x,y;
-    private Semaphore s1_s3;
-    private Semaphore s1;
+    Proceso p;
     
-    public S1 (int x, int y){
-        this.x=x;
-        this.y=y;
-        this.s1=new Semaphore (1);
-        s1_s3= new Semaphore (0);
+    public S1 (Proceso p){
+        this.p=p;
     }
     
     private void operarS1(){
-        a=x+y;
-        System.out.println("A: "+a);
+        p.calcularA();
     }
     
-    public boolean adquirirs1_s3(){
-        return (s1_s3.tryAcquire());
-    }
-    
-    public int getA(){
-        return a;
-    }
     
     public void run(){
-      try{
-        s1.acquire();
         this.operarS1();
-        s1_s3.release();
-      }catch (InterruptedException e){}
 }
 }
