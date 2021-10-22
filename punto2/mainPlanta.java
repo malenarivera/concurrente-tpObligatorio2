@@ -4,9 +4,7 @@
  * and open the template in the editor.
  */
 
-import concurrenteTeoria.punto2.Planta;
-import concurrenteTeoria.punto2.Empaquetador;
-import concurrenteTeoria.punto2.Embotellador;
+package concurrenteTeoria.punto2;
 import java.lang.Thread;
 /**
  *
